@@ -1,65 +1,90 @@
-<h1 align="center">Hi, I'm Mustafa 👋</h1>
+# Hi, I'm Mustafa Ekici
 
-<p align="center">
-  <strong>IoT Software Engineer · Senior Automation Engineer · System Architect</strong><br/>
-  I build industrial-grade platforms — from PLC wiring to cloud infrastructure.
-</p>
+**Senior Automation Engineer & IoT Platform Developer**
 
----
-
-## 🧠 About Me
-
-I started my career commissioning large-scale industrial facilities — programming PLCs, deploying SCADA systems, and leading field teams on the ground. Over time, I moved into software engineering and now build the platforms that replace those legacy systems.
-
-Today I design and ship full-stack IoT platforms: real-time data pipelines, gateway software that talks to PLCs over S7/OPC-UA/Modbus, and web dashboards that give operators full visibility and control. I work across the entire stack — backend APIs, message brokers, time-series databases, Docker infrastructure, and cloud/on-premise deployments.
+I build industrial IoT systems from the ground up — from PLC cabinets on the factory floor to cloud-scale backend architectures. Currently developing a multi-site energy monitoring and control platform serving real production facilities.
 
 ---
 
-## 🔧 Skills
+## What I Do
 
-**Industrial & Automation**
-`Siemens S7 (S7comm / snap7)` · `OPC-UA` · `Modbus TCP/RTU` · `BACnet` · `SNMP`
-`TIA Portal` · `STEP 7` · `WinCC` · `PLC Programming` · `SCADA Systems` · `Field Commissioning`
+- **Automation Engineering** — Commissioning large-scale industrial facilities: PLCs, SCADA, field instruments, safety systems. Siemens, Schneider Electric, Delta.
+- **Industrial IoT Platform** — Designed and built a multi-tenant SaaS platform for solar and industrial energy management. Gateway firmware → backend microservices → real-time dashboards.
+- **On-Premise Deployment** — Enterprise on-prem solution: containerized stack, automated installer, schema migration system, license management.
+- **Embedded Gateway** — Custom Python gateway running on Raspberry Pi (DietPi): Modbus TCP/RTU, Siemens S7, OPC-UA, BACnet. SQLite offline buffer, MQTT publish, zero-export PID control.
 
-**Backend & Data**
-`Python` · `FastAPI` · `SQLAlchemy (async)` · `PostgreSQL / TimescaleDB` · `Redis`
-`Apache Kafka` · `MQTT / EMQX` · `REST API Design` · `asyncio`
+---
+
+## Tech Stack
+
+**Industrial Protocols & Tools**
+- Siemens S7 (snap7 / S7comm), TIA Portal, STEP 7, WinCC
+- Schneider Electric — EcoStruxure, Unity Pro, Modicon
+- Delta PLC & Drives
+- Kepware OPC Server (OPC-DA / OPC-UA data aggregation)
+- Modbus TCP/RTU, OPC-UA (asyncua), BACnet, SNMP
+- IEC 62061 / ISO 13849 (functional safety)
+
+**Backend**
+- Python (advanced) — asyncio, FastAPI, SQLAlchemy async
+- Apache Kafka (event streaming), MQTT (EMQX broker)
+- PostgreSQL / TimescaleDB (continuous aggregates, time-series)
+- Redis (caching, pub/sub)
 
 **Infrastructure & DevOps**
-`Docker` · `Docker Compose` · `GitHub Actions` · `Linux server administration`
-`Cloudflare` (DNS, Tunnels, CDN) · `Nginx / Caddy` · `CI/CD pipelines`
+- Docker, Docker Compose, GitHub Actions CI/CD
+- Cloudflare (Tunnel, DNS, CDN, WAF), Caddy, Nginx
+- Tailscale (mesh VPN for remote gateway access)
+- Linux server management (Ubuntu, DietPi, Raspberry Pi OS)
 
 **Architecture**
-`System design` · `On-premise deployment` · `Microservices` · `Event-driven architecture`
-`Edge computing` · `IoT data ingestion pipelines`
-
-**AI & Tooling**
-Experienced working with AI-assisted development workflows — integrating LLM tools into engineering processes for faster, higher-quality delivery.
-
----
-
-## 🚀 What I've Built
-
-### 🏭 Industrial IoT Platform (SolarTools)
-A production-grade IoT platform running on cloud and on-premise hardware. Real-time telemetry ingestion via MQTT → Kafka → TimescaleDB, web dashboards, alarm management, user/role system, billing, and a custom gateway that connects Siemens S7, OPC-UA, Modbus, and BACnet devices. Handles multiple industrial facilities simultaneously.
-
-### 🔌 Custom Industrial Gateway
-Python-based gateway software deployed on Raspberry Pi / DietPi. Connects PLCs to the platform via MQTT with offline SQLite buffering (no data loss on network outage), delta config deployment, RPC command reliability, and automatic reconnect. Supports S7, OPC-UA, Modbus TCP/RTU, BACnet, SNMP, REST.
-
-### ⚡ Zero Export Controller
-Automated grid export control for solar facilities. Reads inverter and smart meter data via Modbus, runs a real-time control loop, and dynamically curtails inverter output to stay within grid limits. Deployed and validated in active facilities.
-
-### 🖥️ On-Premise SCADA Platform
-Self-hosted edition of the IoT platform — single-command install, Docker Compose stack, automatic DB migrations, license management, and remote update mechanism. Designed as a modern alternative to WinCC/InScada for mid-scale industrial customers.
+- Multi-tenant SaaS, event-driven microservices
+- On-premise containerized deployment
+- Zero-export control (PID + ramp + deadband)
+- Alarm management system (rules, cooldown, notifications)
+- AI inference microservice integration
 
 ---
 
-## 📫 Let's Connect
+## Projects
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mstfaekici)
+### Industrial IoT Platform
+Multi-tenant energy monitoring and control platform for solar and industrial facilities.
+Built entirely from scratch: custom gateway firmware, FastAPI microservices, real-time MQTT telemetry pipeline, Kafka event streaming, TimescaleDB, dashboard engine with 20+ widget types, alarm system, zero-export controller, on-premise deployment package.
+
+`Python` `FastAPI` `Kafka` `MQTT` `TimescaleDB` `Docker` `Cloudflare`
+
+> Production system — source is private; architecture and components represented in public repos.
 
 ---
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ekicimustafa&color=blue&style=flat" alt="profile views"/>
-</p>
+### [modbus-s7-mqtt-bridge](https://github.com/ekicimustafa/modbus-s7-mqtt-bridge)
+Lightweight Python bridge: polls Modbus TCP/RTU and Siemens S7 PLCs, publishes to MQTT with SQLite offline buffering. Configurable via YAML, runs on Raspberry Pi with < 100 MB RAM.
+
+`Python` `pymodbus` `snap7` `paho-mqtt` `aiosqlite`
+
+---
+
+### [industrial-commissioning-checklist](https://github.com/ekicimustafa/industrial-commissioning-checklist)
+8-phase field commissioning checklist based on real large-scale facility commissioning experience. Covers electrical, PLC I/O, SCADA, network, safety (IEC 62061 / ISO 13849), and handover.
+
+`PLC` `SCADA` `Siemens` `Safety` `IEC-62061`
+
+---
+
+## Currently Focused On
+
+- Industrial reliability patterns for IoT gateways (queued commands, redundancy, offline resilience)
+- On-premise enterprise deployment at scale
+- Dutch language (A0 → A2) — planning to work in the Netherlands
+
+---
+
+## Contact
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mstfaekici-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/mstfaekici)
+[![GitHub](https://img.shields.io/badge/GitHub-ekicimustafa-181717?style=flat&logo=github)](https://github.com/ekicimustafa)
+
+---
+
+*Based in Turkey · Open to opportunities in the Netherlands · Industrial IoT · SCADA · Backend Engineering*
