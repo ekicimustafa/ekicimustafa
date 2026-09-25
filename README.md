@@ -18,7 +18,7 @@ I build industrial IoT systems from the ground up — from PLC cabinets on the f
 ## Tech Stack
 
 **Industrial Protocols & Tools**
-- Siemens S7 (snap7 / S7comm), TIA Portal, STEP 7, WinCC
+- Siemens S7 (snap7 / S7comm), TIA Portal, STEP 7, WinCC, PCS7
 - Schneider Electric — EcoStruxure, Unity Pro, Modicon
 - Delta PLC & Drives
 - Kepware OPC Server (OPC-DA / OPC-UA data aggregation)
@@ -55,6 +55,13 @@ Built entirely from scratch: custom gateway firmware, FastAPI microservices, rea
 `Python` `FastAPI` `Kafka` `MQTT` `TimescaleDB` `Docker` `Cloudflare`
 
 > Production system — source is private; architecture and components represented in public repos.
+
+---
+
+### [modbus-mqtt-bridge](https://github.com/ekicimustafa/modbus-mqtt-bridge)
+Async Python bridge: reads Modbus TCP/RTU registers and publishes to MQTT — single YAML config, Docker-ready. Designed for connecting inverters, energy meters, and PLCs to any MQTT broker.
+
+`Python` `pymodbus` `aiomqtt` `asyncio` `pydantic`
 
 ---
 
