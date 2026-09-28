@@ -20,6 +20,9 @@
 I engineer production IoT platforms — from industrial protocol connectors and
 high-throughput telemetry pipelines to real-time SCADA dashboards.
 
+On the OT side: I've commissioned Siemens S7 and Modbus RTU/TCP systems in the field
+and built the gateway layer that bridges them to cloud pipelines.
+
 Currently shipping **[SolarTools](https://www.solartools.io)**, deployed at solar farms and cold-storage
 facilities across Turkey.
 
