@@ -50,6 +50,8 @@ A ThingsBoard-class industrial IoT platform that I architected and built end to 
 edge gateway, message pipeline, multi-tenant backend, infrastructure and on-premise delivery.
 It monitors and controls **10+ industrial sites** in real time.
 
+📐 **Full architecture write-up with diagrams:** [solartools-architecture](https://github.com/ekicimustafa/solartools-architecture)
+
 ```text
 Field devices → Edge gateway → EMQX (MQTT) → Kafka → Telemetry workers → TimescaleDB → API → Dashboards · Alarms · Reports
                      ▲                                                                       │
