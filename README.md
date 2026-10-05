@@ -63,11 +63,11 @@ Field devices → Edge gateway → EMQX (MQTT) → Kafka → Telemetry workers �
 - Offline SQLite buffer, remote config deploy, over-the-air updates and watchdogs, so no data is lost when the link drops
 
 **🔀 Data pipeline**
-- EMQX → Kafka → horizontally scaled telemetry workers → TimescaleDB, with **850× compression** on telemetry
+- EMQX → Kafka → telemetry workers → TimescaleDB, with **850× compression** on telemetry
 - Two-way commands from the dashboard down to the PLC, with delivery and result tracking
 
 **🏗️ Platform**
-- Multi-tenant FastAPI backend: 100+ endpoints, role-based access, OpenAPI docs
+- Multi-tenant FastAPI backend: ~500 endpoints, role-based access, OpenAPI docs
 - Device and gateway management, a dashboard/widget engine and virtual (computed) signals
 - 🔔 Alarm system with SMS and e-mail notifications, cooldowns and quiet hours; PDF reporting (in progress)
 - Integrations with Huawei FusionSolar, NetEco and Enerjisa; subscription billing (TRY/USD)
