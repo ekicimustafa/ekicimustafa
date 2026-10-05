@@ -46,14 +46,39 @@ Industrial Devices → Gateway (Modbus/S7/OPC-UA) → MQTT/EMQX → Kafka → Ti
 
 ## ⚡ Featured — SolarTools
 
-A production IoT monitoring platform designed and built from the ground up.
+A ThingsBoard-class industrial IoT platform that I architected and built end to end:
+edge gateway, message pipeline, multi-tenant backend, infrastructure and on-premise delivery.
+It monitors and controls **10+ industrial sites** in real time.
 
-- 🏭 **10+ industrial sites** monitored in real-time
-- 🏗️ **Multi-tenant SaaS** + on-premise (air-gapped) deployment
-- 🎮 **SCADA-grade command reliability** (structured error codes, pre-flight checks)
+```text
+Field devices → Edge gateway → EMQX (MQTT) → Kafka → Telemetry workers → TimescaleDB → API → Dashboards · Alarms · Reports
+                     ▲                                                                       │
+                     └──────────────── Commands (RPC) with status tracking ◄─────────────────┘
+```
+
+**🛰️ Edge**
+- Python edge gateway on Raspberry Pi / DietPi with Modbus TCP/RTU, Siemens S7, OPC-UA, BACnet, SNMP and REST connectors
+- Offline SQLite buffer, remote config deploy, over-the-air updates and watchdogs, so no data is lost when the link drops
+
+**🔀 Data pipeline**
+- EMQX → Kafka → horizontally scaled telemetry workers → TimescaleDB, with **850× compression** on telemetry
+- Two-way commands from the dashboard down to the PLC, with delivery and result tracking
+
+**🏗️ Platform**
+- Multi-tenant FastAPI backend: 100+ endpoints, role-based access, OpenAPI docs
+- Device and gateway management, a dashboard/widget engine and virtual (computed) signals
+- 🔔 Alarm system with SMS · Email · Push, cooldowns and quiet hours; PDF reporting (in progress)
+- Integrations with Huawei FusionSolar, NetEco and Enerjisa; subscription billing (TRY/USD)
+- AI model integration for forecasting and anomaly detection (TÜBİTAK-funded R&D)
+
+**🎮 Control**
 - ☀️ **Zero-export control** for grid-connected solar inverters
-- 🔔 **Alarm system** — SMS · Email · Push with cooldown & quiet hours
-- 📊 Real-time dashboards + PDF reporting (in progress)
+- **SCADA-grade command path:** guaranteed delivery, no duplicate execution and no lost commands across restarts; write readback and device-offline checks in progress
+
+**🚀 Infrastructure & delivery**
+- Dockerised services, GitHub Actions CI/CD to staging and production, container registry
+- Cloudflare Tunnel for zero-trust access, Redis caching
+- **On-premise edition** for air-gapped industrial sites: installer, license server, schema-migration tracking, backup/restore
 
 ## 🌱 Currently
 
