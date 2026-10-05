@@ -34,14 +34,15 @@ Industrial Devices → Gateway (Modbus/S7/OPC-UA) → MQTT/EMQX → Kafka → Ti
 
 | Layer | Stack |
 |---|---|
-| **Languages** | Python · TypeScript · SQL |
+| **Languages** | Python · Go · SQL · Ladder · FBD |
+| **PLC / SCADA** | Siemens TIA Portal (S7-1500/1200) · WinCC · PCS7 · Schneider Unity Pro (Modicon M340/M580) · Delta |
+| **Industrial** | Modbus RTU/TCP · Siemens S7 · OPC-UA · IEC 60870-5-104 · PROFINET |
 | **Backend** | FastAPI · SQLAlchemy · asyncpg · Kafka |
 | **Messaging** | MQTT (EMQX) · Redis · WebSocket |
 | **Database** | TimescaleDB · PostgreSQL |
-| **Frontend** | React · Next.js |
-| **Infra** | Docker · Tailscale · Cloudflare Tunnel |
-| **Industrial** | Modbus RTU/TCP · Siemens S7 · OPC-UA |
+| **Infra** | Docker · GitHub Actions · Tailscale · Cloudflare Tunnel |
 | **Gateway HW** | Raspberry Pi · DietPi · ARM Linux |
+| **Product** | System architecture and SCADA/HMI UX direction, driven by field experience |
 
 ## ⚡ Featured — SolarTools
 
