@@ -67,7 +67,7 @@ Field devices → Edge gateway → EMQX (MQTT) → Kafka → Telemetry workers �
 **🏗️ Platform**
 - Multi-tenant FastAPI backend: 100+ endpoints, role-based access, OpenAPI docs
 - Device and gateway management, a dashboard/widget engine and virtual (computed) signals
-- 🔔 Alarm system with SMS · Email · Push, cooldowns and quiet hours; PDF reporting (in progress)
+- 🔔 Alarm system with SMS and e-mail notifications, cooldowns and quiet hours; PDF reporting (in progress)
 - Integrations with Huawei FusionSolar, NetEco and Enerjisa; subscription billing (TRY/USD)
 - AI model integration for forecasting and anomaly detection (TÜBİTAK-funded R&D)
 
